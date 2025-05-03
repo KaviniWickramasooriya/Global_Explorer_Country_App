@@ -1,0 +1,325 @@
+.country-detail-container {
+  position: relative;
+  min-height: 100vh;
+  color: #fff;
+}
+
+.country-detail-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') no-repeat center center;
+  background-size: cover;
+  z-index: -1;
+}
+
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(22, 33, 62, 0.9);
+}
+
+.country-detail-content {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 1rem;
+  position: relative;
+}
+
+.country-detail-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.6rem 1rem;
+  background: rgba(233, 69, 96, 0.2);
+  color: #fff;
+  border-radius: 30px;
+  text-decoration: none;
+  margin-bottom: -20rem;
+  margin-top: 1rem;
+  transition: all 0.3s;
+  border: 1px solid rgba(233, 69, 96, 0.5);
+  font-size: 1.2rem;
+}
+
+.country-detail-back-btn:hover {
+  background: rgba(233, 69, 96, 0.4);
+  transform: translateX(-5px);
+}
+
+.country-detail-header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.country-detail-header h1 {
+  font-size: clamp(2.3rem, 4vw, 3.3rem);
+  margin-bottom: 0.5rem;
+  background: linear-gradient(to right, #e94560, #ff7b54);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.country-official-name {
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  opacity: 0.8;
+  margin-bottom: 1.0rem;
+}
+
+.map-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-radius: 30px;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  transition: all 0.3s;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 1.1rem;
+}
+
+.map-link-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.country-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1rem;
+}
+
+.country-flag-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -5rem;
+}
+
+.country-flag-image {
+  width: 100%;
+  max-width: 400px;
+  height: 300px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  aspect-ratio: 3/2;
+  object-fit: cover;
+}
+
+.country-coat-of-arms {
+  margin-top: 0.8rem;
+  text-align: center;
+  width: 100%;
+}
+
+.country-coat-of-arms img {
+  max-height: 120px;
+  max-width: 100%;
+  margin-top: 1.5rem;
+}
+
+.country-info-section {
+  background: rgba(26, 26, 46, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.country-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 0.8rem;
+}
+
+.country-info-card {
+  background: rgba(15, 23, 42, 0.5);
+  border-radius: 8px;
+  padding: 0.8rem;
+  transition: all 0.3s;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  min-height: 200px;
+  height: 100%;
+}
+
+.country-info-card:hover {
+  transform: translateY(-3px);
+  background: rgba(15, 23, 42, 0.7);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.info-icon {
+  font-size: 1.8rem;
+  color: #e94560;
+  margin-bottom: 0.5rem;
+}
+
+.country-info-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #e94560;
+}
+
+.country-info-card p {
+  margin-bottom: 0.3rem;
+  font-size: 1.0rem;
+  line-height: 1.6;
+}
+
+.country-info-card span {
+  font-weight: 600;
+  color: #fff;
+  opacity: 0.9;
+}
+
+.country-detail-loading {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+.loading-spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid rgba(233, 69, 96, 0.2);
+  border-radius: 50%;
+  border-top-color: #e94560;
+  animation: spin 1s linear infinite;
+}
+
+.country-detail-error {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+}
+
+.country-detail-error h3 {
+  color: #e94560;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.return-btn {
+  padding: 0.6rem 1rem;
+  background: #e94560;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s;
+  font-size: 1.2rem;
+}
+
+.return-btn:hover {
+  background: #d13354;
+  transform: translateY(-2px);
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .country-detail-grid {
+    gap: 1rem;
+  }
+  
+  .country-info-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+}
+
+@media (max-width: 992px) {
+  .country-detail-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .country-flag-container {
+    max-width: 500px;
+    margin: 0 auto 1rem;
+  }
+  
+  .country-info-section {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .country-detail-content {
+    padding: 1rem;
+  }
+  
+  .country-info-card {
+    padding: 0.8rem;
+  }
+  
+  .country-flag-image {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .country-detail-header h1 {
+    font-size: 2rem;
+  }
+  
+  .country-info-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .country-info-card {
+    padding: 0.8rem;
+  }
+  
+  .country-detail-back-btn,
+  .map-link-btn {
+    padding: 0.5rem 0.8rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .country-detail-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .country-official-name {
+    font-size: 1rem;
+  }
+  
+  .info-icon {
+    font-size: 1.5rem;
+  }
+  
+  .country-info-card h3 {
+    font-size: 1.2rem;
+  }
+  
+  .country-info-card p {
+    font-size: 1rem;
+  }
+}

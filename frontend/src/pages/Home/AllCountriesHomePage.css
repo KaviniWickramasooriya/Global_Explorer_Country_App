@@ -1,0 +1,301 @@
+.countries-page {
+  background-color: #16213e;
+  color: #fff;
+  min-height: 100vh;
+}
+
+.countries-hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+              url('https://images.unsplash.com/photo-1467269204594-9661b134dd2b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center;
+  background-size: cover;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.countries-hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  margin-top: 3rem;
+  background: linear-gradient(to right, #e94560, #ff7b54);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.countries-hero p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.countries-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.countries-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.search-container {
+  position: relative;
+  flex: 1;
+  min-width: 250px;
+  max-width: 400px;
+}
+
+.search-container input {
+  width: 100%;
+  padding: 0.8rem 1rem 0.8rem 2.5rem;
+  border-radius: 30px;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+.search-container input:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 10px rgba(233, 69, 96, 0.5);
+}
+
+.search-icon {
+  position: absolute;
+  left: 3rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #e94560;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-buttons button {
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.filter-buttons button:hover {
+  background: rgba(233, 69, 96, 0.5);
+}
+
+.filter-buttons button.active {
+  background: #e94560;
+  font-weight: bold;
+}
+
+.filter-buttons select {
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 1rem;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.7rem top 50%;
+  background-size: 0.65rem auto;
+  direction: ltr;
+}
+
+.filter-buttons select:hover {
+  background-color: rgba(233, 69, 96, 0.5);
+}
+
+.filter-buttons select.active {
+  background: #e94560;
+  font-weight: bold;
+}
+
+.filter-buttons select option {
+  background: #fff;
+  color: #000;
+  direction: ltr;
+}
+
+.countries-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.country-card {
+  background: #1a1a2e;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.card-image {
+  height: 180px;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.country-card:hover .card-image img {
+  transform: scale(1.1);
+}
+
+.bookmark-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.bookmark-btn:hover {
+  background: #e94560;
+  transform: scale(1.1);
+}
+
+.card-content {
+  padding: 1.5rem;
+}
+
+.card-content h3 {
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  color: #fff;
+}
+
+.country-info {
+  margin-bottom: 1.5rem;
+}
+
+.country-info p {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.country-info span {
+  color: #e94560;
+  font-weight: bold;
+}
+
+.details-btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background: transparent;
+  color: #e94560;
+  border: 2px solid #e94560;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.details-btn:hover {
+  background: #e94560;
+  color: #fff;
+}
+
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem;
+}
+
+.no-results h3 {
+  color: #e94560;
+  margin-bottom: 1rem;
+}
+
+.loading-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #16213e;
+}
+
+.loading-text {
+  margin-top: 1rem;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .countries-hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .countries-hero p {
+    font-size: 1rem;
+  }
+  
+  .countries-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .search-container {
+    max-width: 100%;
+  }
+  
+  .filter-buttons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .countries-hero {
+    height: 250px;
+  }
+  
+  .countries-hero h1 {
+    font-size: 2rem;
+  }
+  
+  .countries-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .search-icon {
+    left: 2rem;
+  }
+}
