@@ -12,7 +12,10 @@ const app = express();
 connectDB();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: process.env.FRONTEND_URL || 'https://your-vercel-app.vercel.app', // Replace with your Vercel frontend URL
+  credentials: true,
+}));
 app.use(express.json());
 app.use(
   session({
@@ -20,7 +23,10 @@ app.use(
     resave: false,
     saveUninitialized: false,
     store: MongoStore.create({ mongoUrl: process.env.MONGO_URI }),
-    cookie: { maxAge: 24 * 60 * 60 * 1000 }, // 1 day
+    cookie: { 
+      maxAge: 24 * 60 * 60 * 1000, // 1 day
+      secure: process.env.NODE_ENV === 'production', // Secure cookies in production
+    },
   })
 );
 
@@ -33,5 +39,5 @@ app.use((err, req, res, next) => {
   res.status(500).json({ message: 'Something went wrong!' });
 });
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+// Export for Vercel serverless function
+module.exports = app;
