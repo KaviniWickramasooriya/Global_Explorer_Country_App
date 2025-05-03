@@ -35,7 +35,8 @@ const Register = () => {
     }
 
     try {
-      const response = await axios.post('global-explorer-country-app.vercel.app/api/users/register', formData);
+      const apiUrl = process.env.REACT_APP_API_URL || 'global-explorer-country-app.vercel.app/api';
+      const response = await axios.post(`${apiUrl}/users/register`, formData);
       const { token } = response.data;
 
       // Store token in localStorage
