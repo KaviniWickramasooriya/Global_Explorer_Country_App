@@ -85,8 +85,9 @@ const AllCountriesHomePage = () => {
     }
 
     try {
+      const apiUrl = process.env.REACT_APP_API_URL || 'https://global-explorer-lac.vercel.app/api';
       await axios.post(
-        'http://localhost:5000/api/users/favorites',
+        `${apiUrl}/users/favorites`,
         { cca3 },
         { headers: { Authorization: `Bearer ${token}` } }
       );
