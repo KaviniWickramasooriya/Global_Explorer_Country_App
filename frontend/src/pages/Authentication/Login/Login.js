@@ -35,7 +35,7 @@ const Login = () => {
     }
 
     try {
-      const apiUrl = process.env.REACT_APP_API_URL || 'global-explorer-country-app.vercel.app/api';
+      const apiUrl = process.env.REACT_APP_API_URL || 'https://global-explorer-lac.vercel.app/api';
       const response = await axios.post(`${apiUrl}/users/login`, formData);
       const { token } = response.data;
 

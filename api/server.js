@@ -13,7 +13,7 @@ connectDB();
 
 // Middleware
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'https://global-explorer-country-app.vercel.app', 
+  origin: process.env.FRONTEND_URL || 'https://global-explorer-lac.vercel.app', 
   credentials: true,
 }));
 app.use(express.json());
