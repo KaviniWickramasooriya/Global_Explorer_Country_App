@@ -12,8 +12,20 @@ const app = express();
 connectDB();
 
 // Middleware
+const allowedOrigins = [
+  'https://global-explorer-country-app.vercel.app',
+  'https://global-explorer-lac.vercel.app',
+  'http://localhost:3000' // For local development
+];
+
 app.use(cors({
-  origin: process.env.FRONTEND_URL || 'https://global-explorer-lac.vercel.app', 
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true,
 }));
 app.use(express.json());
@@ -24,8 +36,8 @@ app.use(
     saveUninitialized: false,
     store: MongoStore.create({ mongoUrl: process.env.MONGO_URI }),
     cookie: { 
-      maxAge: 24 * 60 * 60 * 1000, // 1 day
-      secure: process.env.NODE_ENV === 'production', // Secure cookies in production
+      maxAge: 24 * 60 * 60 * 1000,
+      secure: process.env.NODE_ENV === 'production',
     },
   })
 );
@@ -39,5 +51,4 @@ app.use((err, req, res, next) => {
   res.status(500).json({ message: 'Something went wrong!' });
 });
 
-// Export for Vercel serverless function
 module.exports = app;
