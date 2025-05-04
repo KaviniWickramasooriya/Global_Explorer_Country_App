@@ -64,6 +64,7 @@ const FavoritesPage = () => {
   const handleRemoveFavorite = async (cca3) => {
     try {
       const token = localStorage.getItem('token');
+      const apiUrl = process.env.REACT_APP_API_URL || 'https://global-explorer-lac.vercel.app/api';
       await axios.delete(`${apiUrl}/users/favorites/${cca3}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
