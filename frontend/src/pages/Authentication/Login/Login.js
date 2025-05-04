@@ -43,7 +43,7 @@ const Login = () => {
       localStorage.setItem('token', token);
 
       setSuccess('Login successful! Redirecting...');
-      setTimeout(() => navigate('/'), 2000); // Redirect to home after 2 seconds
+      setTimeout(() => navigate('/allCountries'), 2000); // Redirect to home after 2 seconds
     } catch (err) {
       setError(err.response?.data?.message || 'Login failed. Please try again.');
     }
