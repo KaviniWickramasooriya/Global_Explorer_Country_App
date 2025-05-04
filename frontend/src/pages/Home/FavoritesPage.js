@@ -31,7 +31,8 @@ const FavoritesPage = () => {
 
     const fetchFavorites = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/users/favorites', {
+        const apiUrl = process.env.REACT_APP_API_URL || 'https://global-explorer-lac.vercel.app/api';
+        const response = await axios.get(`${apiUrl}/users/favorites`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         
