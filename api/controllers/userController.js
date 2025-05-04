@@ -122,3 +122,31 @@ exports.getFavorites = async (req, res) => {
     res.status(500).json({ message: 'Server error', error: error.message });
   }
 };
+
+// Remove a country from favorites
+exports.removeFavorite = async (req, res) => {
+  try {
+    const { cca3 } = req.params;
+    const userId = req.user.id;
+
+    if (!cca3) {
+      return res.status(400).json({ message: 'Country code (cca3) is required' });
+    }
+
+    const user = await User.findById(userId);
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    if (!user.favorites.includes(cca3)) {
+      return res.status(400).json({ message: 'Country not in favorites' });
+    }
+
+    user.favorites = user.favorites.filter(code => code !== cca3);
+    await user.save();
+
+    res.status(200).json({ message: 'Country removed from favorites', favorites: user.favorites });
+  } catch (error) {
+    res.status(500).json({ message: 'Server error', error: error.message });
+  }
+};

@@ -15,4 +15,7 @@ router.post('/favorites', auth, userController.addFavorite);
 // Get favorites (protected)
 router.get('/favorites', auth, userController.getFavorites);
 
+// Remove favorite (protected)
+router.delete('/favorites/:cca3', auth, userController.removeFavorite);
+
 module.exports = router;
