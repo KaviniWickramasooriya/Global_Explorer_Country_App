@@ -64,7 +64,7 @@ const FavoritesPage = () => {
   const handleRemoveFavorite = async (cca3) => {
     try {
       const token = localStorage.getItem('token');
-      await axios.delete(`http://localhost:5000/api/users/favorites/${cca3}`, {
+      await axios.delete(`${apiUrl}/users/favorites/${cca3}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       
