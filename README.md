@@ -1,5 +1,6 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/mNaxAqQD)
+[![Download Report](https://img.shields.io/badge/Download-Report-blue)](https://drive.google.com/file/d/1yYxazo8QRG3qZzWO1Qj27nVoCb7Qxq14/view?usp=sharing)
 
+[![Hosted Link](https://img.shields.io/badge/Visit-Hosted%20Link-blue?style=for-the-badge)](https://global-explorer-lac.vercel.app/)
 
 #  🌏 Global Explorer - REST Countries API App
 
