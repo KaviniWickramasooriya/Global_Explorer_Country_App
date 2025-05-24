@@ -1,8 +1,10 @@
+#  🌏 Global Explorer - REST Countries API App
+
 [![Download Report](https://img.shields.io/badge/Download-Report-blue)](https://drive.google.com/file/d/1yYxazo8QRG3qZzWO1Qj27nVoCb7Qxq14/view?usp=sharing)
 
 [![Hosted Link](https://img.shields.io/badge/Visit-Hosted%20Link-blue?style=for-the-badge)](https://global-explorer-lac.vercel.app/)
 
-#  🌏 Global Explorer - REST Countries API App
+![global explorer](https://github.com/user-attachments/assets/11716582-d7d9-4ad6-b7d4-da02ae2bfa27)
 
 ## Project Summary
 
